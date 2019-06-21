@@ -12,11 +12,11 @@
     http://www.springframework.org/schema/tx
     http://www.springframework.org/schema/tx/spring-tx.xsd">
 
-    <context:component-scan base-package="com.acme.banking.dbo.spring"/>
-    <context:annotation-config/>
+    <context:component-scan base-package="com.acme.banking.dbo.spring"/> //сканировать на поиск аннотаций с пакета ...
+    <context:annotation-config/> // это аннотационный конфиг
 
-    <jpa:repositories base-package="com.acme.banking.dbo.spring.dao"/>
-    <tx:annotation-driven/>
+    <jpa:repositories base-package="com.acme.banking.dbo.spring.dao"/> //
+    <tx:annotation-driven/> //управлять транзакциями
 
     <!-- TODO Spring Boot for Spring auto-configurated context with modules -->
     <beans:bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean" depends-on="dataSource">
